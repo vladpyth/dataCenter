@@ -3,7 +3,7 @@ import sys
 from sqlalchemy import text
 
 from core.database import Base, async_engine, engine, session_fabrik
-from core.models import (Action)
+from core.models import (Room)
 
 
 
