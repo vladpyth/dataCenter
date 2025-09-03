@@ -32,9 +32,25 @@ def drop_all_tables_force():
 def create_tables():
     Base.metadata.reflect(engine)
     drop_all_tables_force()
-
-    Base.metadata.create_all(engine)
     
+    Base.metadata.create_all(engine)
+    insert_data()
+
+def insert_data():
+
+    db_room = Room(
+        name="11",
+    )
+    with session_fabrik() as session:
+        session.add_all(
+            [
+                db_room,
+               
+            ]
+        )
+        
+
+        session.commit()
     
 
 

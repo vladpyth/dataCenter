@@ -79,7 +79,7 @@ class Magszine(Base):
         ForeignKey("Room.id_room", ondelete="CASCADE")
     )
     id_room_old: Mapped[int]
-    
+    comments: Mapped[str| None] = mapped_column(String(20), nullable=True, default=None)
 
 
 # class Token(Base):

@@ -5,7 +5,7 @@ import sys
 import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+from routers.bd_req import router as routes_add
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from core.core import create_tables, get_data
@@ -40,7 +40,7 @@ app.add_middleware(
 
 
 
-#app.include_router()
+app.include_router(routes_add)
 
 create_tables()
 
