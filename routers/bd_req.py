@@ -5,7 +5,7 @@ from routers.schems import pcPost, toolPost
 
 #from .models import CheckoutOrderRequest
 from sqlalchemy.ext.asyncio import AsyncSession
-from routers.bd_servic import AddService
+from routers.bd_servic import AddService, DellService
 # from core.models import Profile
 # from core.security import get_async_db, get_current_user,get_current_user_prod
 
@@ -74,7 +74,7 @@ async def add_product(new_tool: toolPost):
 @router_del.delete("/pc", summary="удалить pc")
 async def add_product(id_pc: int): 
     try:
-        pc_id = await AddService.add_tool(id_pc)
+        pc_id = await DellService.del_pc(id_pc)
         if pc_id is not None:
             return {
                 "status": "success",
