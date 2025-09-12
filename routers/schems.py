@@ -11,7 +11,13 @@ class pcPost(BaseModel):
     ram: int
     name_pc: str
     inventory_number: str
-    
+
+class toolPost(BaseModel):
+    room_id: int
+    type_tool: str
+    name: str
+    inventory_number: str
+
 # class UserOrderResponse(BaseModel):
 #     id_order_proc: int
 #     total_price: int
